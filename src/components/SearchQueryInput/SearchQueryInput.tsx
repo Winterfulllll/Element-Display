@@ -5,7 +5,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import repoStore from "../../stores/repoStore";
 import SortSettingsModal from "../SortSettingsModal/SortSettingsModal";
 import { SortBy, SortOrder } from "../../models/repo";
-import styles from "./SearchQueryInput.module.css";
+// import styles from "./SearchQueryInput.module.css";
 
 export default function SearchQueryInput() {
   const [query, setQuery] = useState(repoStore.query);

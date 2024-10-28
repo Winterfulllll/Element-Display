@@ -4,7 +4,7 @@ import { List } from "@mui/material";
 import repoStore from "../../../stores/repoStore";
 import Repo from "./Repo/Repo";
 import LoadingDisplay from "../../LoadingDisplay/LoadingDisplay";
-import styles from "./RepoList.module.css";
+// import styles from "./RepoList.module.css";
 
 const RepoList = observer(() => {
   const listRef = useRef<HTMLUListElement>(null);

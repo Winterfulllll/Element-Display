@@ -5,7 +5,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import repoStore from "../../../../stores/repoStore";
 import EditRepoModal from "../../../EditRepoModal/EditRepoModal";
 import { useState } from "react";
-import styles from "./Repo.module.css";
+// import styles from "./Repo.module.css";
 
 const Repo: React.FC<{
   repository: Repository;
