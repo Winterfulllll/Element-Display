@@ -46,9 +46,11 @@ const EditRepoModal: React.FC<{
               id="name"
               label="Название репозитория"
               placeholder="Введите новое название"
-              defaultValue={updatedRepoData.name}
+              value={updatedRepoData.name}
               onChange={handleChange("name")}
+              maxRows={2}
               multiline
+              inputProps={{ maxLength: 50 }}
             />
           </Grid2>
           <Grid2 size={6}>
@@ -56,9 +58,11 @@ const EditRepoModal: React.FC<{
               id="owner"
               label="Владелец"
               placeholder="Введите новое имя"
-              defaultValue={updatedRepoData.owner}
+              value={updatedRepoData.owner}
               onChange={handleChange("owner")}
+              maxRows={2}
               multiline
+              inputProps={{ maxLength: 50 }}
             />
           </Grid2>
         </Grid2>
@@ -68,6 +72,7 @@ const EditRepoModal: React.FC<{
           placeholder="Введите новое описание"
           defaultValue={updatedRepoData.description}
           onChange={handleChange("description")}
+          maxRows={6}
           multiline
           fullWidth
           sx={{ mt: 2 }}

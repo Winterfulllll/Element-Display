@@ -1,4 +1,5 @@
 import {
+  Container,
   IconButton,
   Link,
   ListItem,
@@ -11,6 +12,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import repoStore from "../../../../stores/repoStore";
 import EditRepoModal from "../../../EditRepoModal/EditRepoModal";
 import { useState } from "react";
+import truncate from "lodash/truncate";
 // import styles from "./Repo.module.css";
 
 const Repo: React.FC<{
@@ -34,47 +36,60 @@ const Repo: React.FC<{
 
   return (
     <ListItem>
-      <ListItemText
-        primary={
-          <Typography>
-            <Link
-              href={repo.ownerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: "inherit",
-                textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              {repo.owner}
-            </Link>
-            {" / "}
-            <Link
-              href={repo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: "inherit",
-                textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              {repo.name}
-            </Link>
-          </Typography>
-        }
-        secondary={
-          <Typography variant="body2" color="text.secondary">
-            {repo.description || <i>Описание отсутствует</i>}{" "}
-          </Typography>
-        }
-      />
-      <IconButton aria-label="edit" onClick={handleEdit} sx={{ ml: 10 }}>
+      <Container
+        sx={{
+          overflow: "hidden",
+        }}
+      >
+        <ListItemText
+          primary={
+            <Typography>
+              <Link
+                href={repo.ownerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                }}
+              >
+                {repo.owner}
+              </Link>
+              {" / "}
+              <Link
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                }}
+              >
+                {repo.name}
+              </Link>
+            </Typography>
+          }
+          secondary={
+            <Typography variant="body2" color="text.secondary">
+              {repo.description ? (
+                truncate(repo.description, {
+                  length: 150,
+                  omission: "...",
+                })
+              ) : (
+                <i>Описание отсутствует</i>
+              )}
+            </Typography>
+          }
+        />
+      </Container>
+      <IconButton aria-label="edit" onClick={handleEdit} sx={{ ml: 5 }}>
         <EditIcon />
       </IconButton>
       <IconButton aria-label="delete" onClick={handleDelete}>

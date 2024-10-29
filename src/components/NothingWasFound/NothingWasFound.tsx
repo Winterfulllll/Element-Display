@@ -1,5 +1,7 @@
 // import styles from "./NothingWasFound.module.css";
 
+import { Typography } from "@mui/material";
+
 export default function NothingWasFound() {
-  return <h1>Ничего не найдено...</h1>;
+  return <Typography variant="h5">Ничего не найдено...</Typography>;
 }
