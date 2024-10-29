@@ -1,4 +1,10 @@
-import { IconButton, ListItem, ListItemText } from "@mui/material";
+import {
+  IconButton,
+  Link,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import { Repository } from "../../../../models/repo";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -28,8 +34,47 @@ const Repo: React.FC<{
 
   return (
     <ListItem>
-      <ListItemText primary={repo.name} />
-      <IconButton aria-label="edit" onClick={handleEdit}>
+      <ListItemText
+        primary={
+          <Typography>
+            <Link
+              href={repo.ownerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              {repo.owner}
+            </Link>
+            {" / "}
+            <Link
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              {repo.name}
+            </Link>
+          </Typography>
+        }
+        secondary={
+          <Typography variant="body2" color="text.secondary">
+            {repo.description || <i>Описание отсутствует</i>}{" "}
+          </Typography>
+        }
+      />
+      <IconButton aria-label="edit" onClick={handleEdit} sx={{ ml: 10 }}>
         <EditIcon />
       </IconButton>
       <IconButton aria-label="delete" onClick={handleDelete}>

@@ -6,6 +6,7 @@ import {
   Stack,
   Switch,
   TextField,
+  Typography,
 } from "@mui/material";
 import { SORT_BY_OPTIONS, SortBy, SortOrder } from "../../models/repo";
 import { useState } from "react";
@@ -33,7 +34,7 @@ const SortSettingsModal: React.FC<{
   return (
     <Modal open={open} onClose={onClose} onKeyPress={handleKeyPress}>
       <div className={styles.modalContainer}>
-        <Stack spacing={2} sx={{ minWidth: 300 }}>
+        <Stack spacing={2} sx={{ minWidth: 300, textAlign: "center" }}>
           <TextField
             select
             label="Сортировать по"
@@ -43,12 +44,14 @@ const SortSettingsModal: React.FC<{
           >
             {SORT_BY_OPTIONS.map((option, index) => (
               <MenuItem key={index} value={option.value?.toString()}>
-                {option.labelRu}
+                <Typography
+                  component="span"
+                  dangerouslySetInnerHTML={{ __html: option.labelRu }}
+                />
               </MenuItem>
             ))}
           </TextField>
           <FormControlLabel
-            sx={{ ml: 10 }}
             control={
               <Switch
                 checked={sortOrder === "asc"}

@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 
 export const SORT_BY_OPTIONS = [
-  { value: "stars", labelRu: "Звезды" },
-  { value: "forks", labelRu: "Форки" },
-  { value: "help-wanted-issues", labelRu: " требующие помощи" },
-  { value: null, labelRu: "Выключить" },
+  { value: "stars", labelRu: "Звездам" },
+  { value: "forks", labelRu: "Форкам" },
+  { value: "help-wanted-issues", labelRu: "Проблемам требующим помощи" },
+  { value: null, labelRu: "<i>Выключить</i>" },
 ] as const;
 
 export type SortBy = (typeof SORT_BY_OPTIONS)[number]["value"];

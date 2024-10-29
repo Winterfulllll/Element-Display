@@ -57,7 +57,7 @@ const RepoList = observer(() => {
     <List
       ref={listRef}
       component="ul"
-      sx={{ maxHeight: 600, maxWidth: "100%", overflow: "auto" }}
+      sx={{ maxHeight: 550, maxWidth: "100%", overflow: "auto" }}
     >
       {repoStore.repos.map((repo) => (
         <Repo key={repo.uniqueKey} repository={repo} />
