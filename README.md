@@ -1,4 +1,4 @@
-# RepoSearcher 🔎
+# [RepoSearcher 🔎](https://winterfulllll.github.io/Repo-Searcher/)
 
 ## Описание 💡
 
@@ -6,8 +6,8 @@
 
 ### Технологический стек ⚙️
 
-- [Vite](https://vite.dev/) + [React](https://react.dev/) + [TS](https://www.typescriptlang.org/)
-- **State-manager:** [MobX](https://mobx.js.org)
+- **Main stack:** [Vite](https://vite.dev/) + [React](https://react.dev/) + [TS](https://www.typescriptlang.org/)
+- **State manager:** [MobX](https://mobx.js.org)
 - **React UI Component Library:** [Material UI](https://mui.com/)
 - **Testing:** [Jest](https://jestjs.io) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
@@ -51,4 +51,12 @@
 
 ## Вывод 🤔
 
-Скоро будет...
+В результате проделанной работы мне удалось:
+
+- Выстроить гармоничный технологический стек
+- Реализовать все запланированные основные фичи
+- Сделать целостный pet-проект
+
+### Примечание
+
+В качестве _UI библиотеки_ мной был выбран `Material UI`, так как ранее с ним не работал и хотелось пощупать что-то новое. Кроме того, он является крайне популярным и хорошо поддерживаемым решением.
