@@ -70,9 +70,6 @@ class RepoStore {
     Object.assign(this, params);
     this.page = 1;
     this.repos = [];
-    if (this.query) {
-      this.fetchRepos();
-    }
   }
 
   deleteRepo(uniqueKey: string): void {

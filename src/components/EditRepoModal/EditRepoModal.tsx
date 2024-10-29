@@ -40,7 +40,7 @@ const EditRepoModal: React.FC<{
   return (
     <Modal open={open} onClose={onClose} onKeyPress={handleKeyPress}>
       <div className={styles.modalContainer}>
-        <Grid2 container spacing={2}>
+        <Grid2 container spacing={2} sx={{ minWidth: 300 }}>
           <Grid2 size={6}>
             <TextField
               id="name"

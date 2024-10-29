@@ -14,8 +14,9 @@ export default function SearchQueryInput() {
   const handleSearch = () => {
     if (query.trim() !== "") {
       repoStore.updateSearchParams({ query });
+      repoStore.fetchRepos();
     } else {
-      alert("Поле поиска не может быть пустым");
+      alert("Поле поиска не может быть пустым!");
     }
   };
 
@@ -35,6 +36,9 @@ export default function SearchQueryInput() {
 
   const handleApplySettings = (sortBy: SortBy, sortOrder: SortOrder) => {
     repoStore.updateSearchParams({ sortBy: sortBy, sortOrder: sortOrder });
+    if (repoStore.query) {
+      repoStore.fetchRepos();
+    }
   };
 
   return (
