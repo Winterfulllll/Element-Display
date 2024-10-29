@@ -31,6 +31,10 @@ describe("RepoStore", () => {
     (getRepos as jest.Mock).mockResolvedValue(mockRepoResponse);
   });
 
+  afterEach(() => {
+    consoleErrorSpy.mockRestore();
+  });
+
   it("should update search params and refetch", () => {
     store.updateSearchParams({
       query: "test",
